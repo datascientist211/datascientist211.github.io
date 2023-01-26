@@ -1,5 +1,6 @@
 ---
 title-heading: false
+title: Providing data-driven solutions to challenging business problems
 layout: default
 ---
 
@@ -33,21 +34,3 @@ Also during the study I've completed this projects (in order from the most recen
 E-mail: dbazinka@gmail.com 
 
 Mobile: +31 6 252 985 43
-
-
-```python
-
-```
-
-<img style="float: center;" src="photo.jpg">
-
-
-
-```python
-
-```
-
-
-```python
-
-```
