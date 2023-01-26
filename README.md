@@ -1,5 +1,8 @@
+---
+title-heading: false
+layout: default
+---
 ###### Providing data-driven solutions to challenging business problems
-
 
 #### Hello!  I'm Daria Efimova. 
 
@@ -31,3 +34,4 @@ Also during the study I've completed this projects (in order from the most recen
 E-mail: dbazinka@gmail.com 
 
 Mobile: +31 6 252 985 43
+
