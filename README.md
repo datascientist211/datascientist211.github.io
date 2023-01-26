@@ -1,7 +1,4 @@
----
-title: Providing data-driven solutions to challenging business problems
-layout: default
----
+#### Providing data-driven solutions to challenging business problems
 
 #### Hello!  I'm Daria Efimova. 
 
