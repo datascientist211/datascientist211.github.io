@@ -1,7 +1,7 @@
 ### Portfolio
 
 ---
-[Analysis of the owners of the dogs in Groningen](./Nederland/Gron_pet_analysis/index_dogs.html)
+[Analysis of the owners of the dogs in Groningen](./Groningen_dogs/index_dogs.md)
 
 ---
 [SpaceX Falcon 9 First Stage Landing Prediction](./SpaceXPrediction/index_spacex.md)
