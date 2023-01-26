@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-#title: Your awesome title
+title: Providing data-driven solutions to challenging business problems
 #email: your-email@example.com
 #description: >- # this means to ignore newlines until "baseurl:"
 #  Write an awesome description for your new site here. You can edit this
@@ -26,13 +26,12 @@
 #  Google search results) and in your feed.xml site description.
 baseurl: "datascientist211.github.io" # the subpath of your site, e.g. /blog
 url: "https://datascientist211.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  datascientist211
+markdown: kramdown
 
 # Build settings
 theme: minima
-plugins:
-  - jekyll-feed
+#plugins:
+#  - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
