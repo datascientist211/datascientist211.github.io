@@ -18,19 +18,27 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Portfolio of Daria Efimova
-email: dbazinka@dmail.com
-description: >- # this means to ignore newlines until "baseurl:" 
-    Portfolio of Daria Efimova Description
-# baseurl: "datascientist211.github.io" # the subpath of your site, e.g. /blog
+title: Daria Efimova
+logo: "photo.jpg?raw=true"
+description: > # your text below (remove <br> elements if you don't need line breaks)
+  Providing data-driven solutions to challenging business problems 
+  <br><br>
+  Talented data scientist with strong analytical skills. 
+  I've been a software developer for about 5 years and receive a Masters degree in mathematics and computer science before that.
+  <br><br>
+  <a href="https://www.linkedin.com/in/daria-efimova-8495a479/">View My LinkedIn Profile</a> 
+  
+theme: jekyll-theme-minimal
+#google_analytics: UA-000000-0 # your Google Analytics tracking ID here
+
 url: "https://datascientist211.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 markdown: kramdown
 
 # Build settings
 # theme: minima
-remote_theme: pages-themes/cayman@v0.2.0
-plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
+# remote_theme: pages-themes/cayman@v0.2.0
+# plugins:
+# - jekyll-remote-theme # add this line to the plugins list if you already have one
 
 # Exclude from processing.
 # The following items will not be processed, by default.
