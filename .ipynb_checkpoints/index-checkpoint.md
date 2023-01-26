@@ -5,6 +5,9 @@
 # layout: home
 ---
 
+###### Providing data-driven solutions to challenging business problems
+
+
 #### Hello!  I'm Daria Efimova. 
 
 ![photo](photo.jpg)
@@ -21,7 +24,7 @@ The most cool and recent project I've done:
 
 Also during the study I've completed this projects (in order from the most recent one):
 1. [SpaceX Falcon 9 First Stage Landing Prediction](./SpaceXPrediction/index_spacex.html)
-2. [Coursera: Machine Learning project](./MLCourseraProject.html)
+2. [Coursera: Machine Learning project](./MLCourseraProject/MLCourseraProject.md)
 3. [Analyses and construction of the dutch primary schools dataset](./school_data/index_school.html)
 
 
