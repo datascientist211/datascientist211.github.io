@@ -1,3 +1,10 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: home
+---
+
 ###### Providing data-driven solutions to challenging business problems
 
 
@@ -31,3 +38,21 @@ Also during the study I've completed this projects (in order from the most recen
 E-mail: dbazinka@gmail.com 
 
 Mobile: +31 6 252 985 43
+
+
+```python
+
+```
+
+<img style="float: center;" src="photo.jpg">
+
+
+
+```python
+
+```
+
+
+```python
+
+```
