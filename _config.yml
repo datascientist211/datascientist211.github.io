@@ -25,8 +25,7 @@ description: > # your text below (remove <br> elements if you don't need line br
   Talented data scientist with strong analytical skills. 
   I've been a software developer for about 5 years and receive a Masters degree in mathematics and computer science before that.
   <br><br>
-github:
-  repository_url: https://github.com/datascientist211/data_analytics.git
+repository_url: https://github.com/datascientist211/data_analytics.git
   
 #google_analytics: UA-000000-0 # your Google Analytics tracking ID here
 remote_theme: pages-themes/cayman@v0.2.0
