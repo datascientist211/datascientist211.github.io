@@ -1,4 +1,4 @@
-## Portfolio
+### Portfolio
 
 ---
 [Analysis of the owners of the dogs in Groningen](./Nederland/Gron_pet_analysis/index_dogs.html)
@@ -10,7 +10,7 @@
 [Coursera: Machine Learning project](./MLCourseraProject/MLCourseraProject.md)
 
 ---
-[Analyses and construction of the dutch primary schools dataset](./school_data/index_school.html)
+[Analyses and construction of the dutch primary schools dataset](./school/index_school.md)
 
 ---
 
