@@ -10,75 +10,6 @@ Here you can also see an analysis of who dogs owners in Groningen are, how they 
 Also I wanted to take a look at the map where dog owner mostly live in Groningen (code of this map and some additional details you can see [here](./dogs_on_map.md)). For that I downloaded Wijk- en buurtkaart 2022 [dataset](https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/geografische-data/wijk-en-buurtkaart-2022) and combine it with the dog's owners data I have:
 
 
-```python
-import pandas as pd
-import geopandas as gpd
-import folium
-import matplotlib.pyplot as plt
-
-geo_data = gpd.GeoDataFrame(gpd.read_file("WijkBuurtkaart_Groningen_2022/wijkenbuurten_2022_v1.gpkg"))
-
-data = geo_data.drop('geometry', axis=1)
-data.to_csv(r'data_from_wijkbuurtkaart.csv', index = False)
-geo_data.set_crs(epsg='28992')
-geo_data = geo_data.to_crs(epsg='4326')
-
-dogs_data=pd.read_csv('honden_data.csv', sep = ";")
-dogs_data['buurtcode'] = dogs_data.apply(lambda row: "BU00" + str(row['buurtnr']), axis=1)
-
-dogs_data['2016'] = dogs_data['2016'].replace('.',0)
-convert_dict = {'2016': int}
-dogs_data = dogs_data.astype(convert_dict)
-
-
-m = folium.Map(location=[53.22222, 6.56757],
-               zoom_start=12,
-               tiles='CartoDB positron',
-               zoom_control=False,
-               scrollWheelZoom=False,
-               dragging=False)
-
-year = '2018'
-from branca.colormap import linear
-colormap = linear.YlOrRd_09.scale(min(dogs_data[year]),
-                                            max(dogs_data[year]))
-colormap.caption = 'Amount of dogs owners in Groningen in ' + year
-colormap.add_to(m)
-
-
-def style_fn(feature):
-    #colormap = branca.colormap.LinearColormap(["white", "green"], vmin=0, vmax=100)
-    most_common = feature["properties"]["dogs_amount"]
-    ss = {
-        "fillColor": colormap(most_common),
-        "fillOpacity": 0.9,
-        "weight": 0.9,
-        "opacity": 1,
-        "color": "black",
-    }
-    return ss
-
-def get_dogs_amount(row):
-    dogs_row = dogs_data[dogs_data['buurtcode'] == row['buurtcode']]
-    dogs = 0 if dogs_row.empty else dogs_row[year].iloc[0]
-    return dogs
-
-def get_buurt_naam(row):
-    return row["buurtnaam"]
-    
-geo_data['dogs_amount'] = geo_data.apply(lambda row: get_dogs_amount(row), axis=1)
-geo_data['buurt'] = geo_data.apply(lambda row: get_buurt_naam(row), axis=1)
-
-folium.GeoJson(
-    geo_data.__geo_interface__,
-    style_function=style_fn,
-    tooltip=folium.features.GeoJsonTooltip(['buurt', 'dogs_amount']),
-).add_to(m)
-
-m
-```
-
-
 
 
 <div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -> Trust Notebook</span><iframe srcdoc="&lt;!DOCTYPE html&gt;
@@ -393,8 +324,3 @@ m
 &lt;/script&gt;" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div>
 
 
-
-
-```python
-
-```
