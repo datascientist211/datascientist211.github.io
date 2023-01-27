@@ -1,6 +1,6 @@
 ---
 
-title: The map of the distribution of the dogs owners in Groningen
+title: Groningen dogs owners distribution on the map
 description: " "
 
 ---
