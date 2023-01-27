@@ -1,7 +1,6 @@
 ---
 
 title: Description for Dutch schools dataset
-description: " "
 
 ---
 

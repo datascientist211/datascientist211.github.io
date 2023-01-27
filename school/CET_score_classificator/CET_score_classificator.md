@@ -1,7 +1,6 @@
 ---
 
 title:  Dutch primary school CET score
-description: " "
 
 ---
 

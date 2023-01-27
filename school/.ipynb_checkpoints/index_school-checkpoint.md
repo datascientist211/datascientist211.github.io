@@ -1,7 +1,6 @@
 ---
 
 title: Analyses and construction of the dutch primary schools dataset
-description: " "
 
 ---
 

@@ -1,7 +1,6 @@
 ---
 
 title: Dutch schools dataset construction
-description: " "
 
 ---
 

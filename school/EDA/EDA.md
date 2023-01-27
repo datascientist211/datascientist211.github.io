@@ -1,7 +1,6 @@
 ---
 
 title: Explotatory Data Analysis
-description: " "
 
 ---
 
