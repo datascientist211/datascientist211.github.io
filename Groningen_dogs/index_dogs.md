@@ -1,4 +1,9 @@
-# Analysis of the owners of the dogs in Groningen
+---
+
+title: Analysis of the owners of the dogs in Groningen
+description: " "
+
+---
 
 I like pets. Once I thought about people who also like and also have some pets. Who are they? Do they have something in common? It would be very interesting to know this things. To figure it out I decided to look at the data. 
 When I start looking for the dataset, I found the [data about dog owners in Groningen](https://data.groningen.nl/dataset/hondenbezit-gemeente-groningen) and decided to do some analysis based on that and [other open data](https://data.groningen.nl/) from Groningen municipality.
