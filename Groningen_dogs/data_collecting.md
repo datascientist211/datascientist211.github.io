@@ -1,7 +1,6 @@
 ---
 
 title:  Dogs owners dataset construction
-description: " "
 
 ---
 
