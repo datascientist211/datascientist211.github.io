@@ -21,30 +21,21 @@ print(data.columns)
 data.head()
 ```
 
-    Index(['buurtcode', 'buurtnaam', 'wijkcode',
-           'bevolkingsdichtheid_inwoners_per_km2', 'aantal_inwoners', 'mannen',
-           'vrouwen', 'percentage_personen_0_tot_15_jaar',
-           'percentage_personen_15_tot_25_jaar',
-           'percentage_personen_25_tot_45_jaar',
-           'percentage_personen_45_tot_65_jaar',
-           'percentage_personen_65_jaar_en_ouder', 'percentage_ongehuwd',
-           'percentage_gehuwd', 'percentage_gescheid', 'percentage_verweduwd',
-           'aantal_huishoudens', 'percentage_eenpersoonshuishoudens',
-           'percentage_huishoudens_zonder_kinderen',
-           'percentage_huishoudens_met_kinderen', 'gemiddelde_huishoudsgrootte',
-           'percentage_westerse_migratieachtergrond',
-           'percentage_niet_westerse_migratieachtergrond',
-           'percentage_uit_marokko',
-           'percentage_uit_nederlandse_antillen_en_aruba',
-           'percentage_uit_suriname', 'percentage_uit_turkije',
-           'percentage_overige_nietwestersemigratieachtergrond',
-           'aantal_mensen_met_een_uitkering_Participatiewet',
-           'percentage_mensen_met_een_uitkering_krachtens_de_Participatiewet',
-           'bevolking_totaal', 'percentage_minimahuishoudens',
-           'aantal_minimahuishoudens', 'gemiddeld_inkomen_per_persoon_met_inkomen',
-           'gemiddeld_huishoudensinkomen', 'aangiften_diefstal_af_uit_woning',
-           'aangiften_diefstal_auto', 'aangiften_diefstal_fiets',
-           'aangiften_diefstal_af_uit_bedrijf', 'aangiften_diefstal_af_uit_auto',
+    Index(['buurtcode', 'buurtnaam', 'wijkcode', 'inwoners_per_km2',
+           'aantal_inwoners', 'mannen', 'vrouwen', 'perc_0_15_jaar',
+           'perc_15_25_jaar', 'perc_25_45_jaar', 'perc_45_65_jaar',
+           'perc_65_en_ouder', 'perc_ongehuwd', 'perc_gehuwd', 'perc_gescheid',
+           'perc_verweduwd', 'aantal_huishoudens', 'perc_eenpersoonshuishoudens',
+           'perc_huishoudens_z_kind', 'perc_huishoudens_met_kind',
+           'gemiddelde_huishoudsgrootte', 'perc_west_migratie',
+           'perc_niet_west_migratie', 'percentage_uit_marokko',
+           'perc_uit_antillen_en_aruba', 'percentage_uit_suriname',
+           'percentage_uit_turkije', 'perc_overige_nietwestersemigratie',
+           'aantal_mensen_met_pw', 'perc_mensen_met_pw', 'bevolking_totaal',
+           'percentage_minimahuishoudens', 'aantal_minimahuishoudens',
+           'gemiddeld_inkomen_per_p_met_inkomen', 'gemiddeld_huishoudensinkomen',
+           'diefstal_af_uit_woning', 'diefstal_auto', 'diefstal_fiets',
+           'diefstal_af_uit_bedrijf', 'diefstal_af_uit_auto',
            'aangiften_van_vernieling', 'aangiften_van_mishandeling', 'dogs_amount',
            'politie_report_aantal'],
           dtype='object')
@@ -74,20 +65,20 @@ data.head()
       <th>buurtcode</th>
       <th>buurtnaam</th>
       <th>wijkcode</th>
-      <th>bevolkingsdichtheid_inwoners_per_km2</th>
+      <th>inwoners_per_km2</th>
       <th>aantal_inwoners</th>
       <th>mannen</th>
       <th>vrouwen</th>
-      <th>percentage_personen_0_tot_15_jaar</th>
-      <th>percentage_personen_15_tot_25_jaar</th>
-      <th>percentage_personen_25_tot_45_jaar</th>
+      <th>perc_0_15_jaar</th>
+      <th>perc_15_25_jaar</th>
+      <th>perc_25_45_jaar</th>
       <th>...</th>
       <th>gemiddeld_huishoudensinkomen</th>
-      <th>aangiften_diefstal_af_uit_woning</th>
-      <th>aangiften_diefstal_auto</th>
-      <th>aangiften_diefstal_fiets</th>
-      <th>aangiften_diefstal_af_uit_bedrijf</th>
-      <th>aangiften_diefstal_af_uit_auto</th>
+      <th>diefstal_af_uit_woning</th>
+      <th>diefstal_auto</th>
+      <th>diefstal_fiets</th>
+      <th>diefstal_af_uit_bedrijf</th>
+      <th>diefstal_af_uit_auto</th>
       <th>aangiften_van_vernieling</th>
       <th>aangiften_van_mishandeling</th>
       <th>dogs_amount</th>
@@ -231,8 +222,7 @@ numeric_data = data.select_dtypes(include=[np.number])
 corr_matrix = numeric_data.corr()
 f, ax = plt.subplots(figsize = (14,12))
 plt.title('Correlation of numeric factors', y = 1, size = 16)
-dogs_amount = corr_matrix[['dogs_amount']]
-sns.heatmap(corr_matrix, vmax = .8, annot_kws={'size': 7}, annot = True, square=True)
+sns.heatmap(corr_matrix, vmax = .8, annot_kws={'size': 8}, annot = True)
 ```
 
 
@@ -248,131 +238,56 @@ sns.heatmap(corr_matrix, vmax = .8, annot_kws={'size': 7}, annot = True, square=
     
 
 
+Looking at the picture of the correlation matrix (above) I can say that there are definately some correlations there, but because there are a lot of factor, I can't see anything. But we are interested in the dog's owners, so let's take a look at correlations with `dogs_amount` column of the correlation matrix
+
 
 ```python
-print(numeric_data.columns)
+dogs_amount = corr_matrix[['dogs_amount']]
+fig, ax = plt.subplots(figsize=(16, 16))
+ax = sns.heatmap(dogs_amount, vmax = .8, annot_kws={'size': 10}, annot = True, linewidths=.5)
 ```
 
-    Index(['bevolkingsdichtheid_inwoners_per_km2', 'aantal_inwoners', 'mannen',
-           'vrouwen', 'percentage_personen_0_tot_15_jaar',
-           'percentage_personen_15_tot_25_jaar',
-           'percentage_personen_25_tot_45_jaar',
-           'percentage_personen_45_tot_65_jaar',
-           'percentage_personen_65_jaar_en_ouder', 'percentage_ongehuwd',
-           'percentage_gehuwd', 'percentage_gescheid', 'percentage_verweduwd',
-           'aantal_huishoudens', 'percentage_eenpersoonshuishoudens',
-           'percentage_huishoudens_zonder_kinderen',
-           'percentage_huishoudens_met_kinderen', 'gemiddelde_huishoudsgrootte',
-           'percentage_westerse_migratieachtergrond',
-           'percentage_niet_westerse_migratieachtergrond',
-           'percentage_uit_marokko',
-           'percentage_uit_nederlandse_antillen_en_aruba',
-           'percentage_uit_suriname', 'percentage_uit_turkije',
-           'percentage_overige_nietwestersemigratieachtergrond',
-           'aantal_mensen_met_een_uitkering_Participatiewet',
-           'percentage_mensen_met_een_uitkering_krachtens_de_Participatiewet',
-           'bevolking_totaal', 'percentage_minimahuishoudens',
-           'aantal_minimahuishoudens', 'gemiddeld_inkomen_per_persoon_met_inkomen',
-           'gemiddeld_huishoudensinkomen', 'aangiften_diefstal_af_uit_woning',
-           'aangiften_diefstal_auto', 'aangiften_diefstal_fiets',
-           'aangiften_diefstal_af_uit_bedrijf', 'aangiften_diefstal_af_uit_auto',
-           'aangiften_van_vernieling', 'aangiften_van_mishandeling', 'dogs_amount',
-           'politie_report_aantal'],
-          dtype='object')
+
+    
+![png](dogs_eda_groningen_files/dogs_eda_groningen_5_0.png)
+    
+
+
+Let's get from correlation matrix only high correlated columns. 
+
+
+```python
+cor_matrix = corr_matrix.abs()
+upper_tri = cor_matrix.where(np.triu(np.ones(cor_matrix.shape),k=1).astype(np.bool))
+columns = [column for column in upper_tri.columns if any(upper_tri[column] > 0.5)]
+       
+print(columns)
+```
+
+    ['aantal_inwoners', 'mannen', 'vrouwen', 'perc_15_25_jaar', 'perc_25_45_jaar', 'perc_45_65_jaar', 'perc_65_en_ouder', 'perc_ongehuwd', 'perc_gehuwd', 'perc_gescheid', 'perc_verweduwd', 'aantal_huishoudens', 'perc_eenpersoonshuishoudens', 'perc_huishoudens_z_kind', 'perc_huishoudens_met_kind', 'gemiddelde_huishoudsgrootte', 'perc_west_migratie', 'perc_niet_west_migratie', 'percentage_uit_marokko', 'perc_uit_antillen_en_aruba', 'percentage_uit_suriname', 'percentage_uit_turkije', 'perc_overige_nietwestersemigratie', 'aantal_mensen_met_pw', 'perc_mensen_met_pw', 'bevolking_totaal', 'percentage_minimahuishoudens', 'aantal_minimahuishoudens', 'gemiddeld_inkomen_per_p_met_inkomen', 'gemiddeld_huishoudensinkomen', 'diefstal_af_uit_woning', 'diefstal_fiets', 'diefstal_af_uit_bedrijf', 'diefstal_af_uit_auto', 'aangiften_van_vernieling', 'aangiften_van_mishandeling', 'dogs_amount', 'politie_report_aantal']
+
+
+    /var/folders/1q/nw56sv790t34hlk8f_j1dtxh0000gn/T/ipykernel_53074/164323969.py:2: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+      upper_tri = cor_matrix.where(np.triu(np.ones(cor_matrix.shape),k=1).astype(np.bool))
 
 
 
 ```python
-columns = ['dogs_amount',
-           'aantal_mensen_met_een_uitkering_Participatiewet', 
-           'bevolking_totaal',  
-           'jeugd_0_17_jarigen', 
-           'volwassenen_27_64_jaar', 
-           'senioren_65_jaar_en_ouder',
-           'woonruimten', 
-           'percentage_minimahuishoudens', 
-           'aangiften_van_vernieling']
 sns.pairplot(data = data,
                   x_vars = ['dogs_amount'],
                   y_vars = columns)
 ```
 
 
-    ---------------------------------------------------------------------------
-
-    KeyError                                  Traceback (most recent call last)
-
-    Cell In [4], line 10
-          1 columns = ['dogs_amount',
-          2            'aantal_mensen_met_een_uitkering_Participatiewet', 
-          3            'bevolking_totaal',  
-       (...)
-          8            'percentage_minimahuishoudens', 
-          9            'aangiften_van_vernieling']
-    ---> 10 sns.pairplot(data = data,
-         11                   x_vars = ['dogs_amount'],
-         12                   y_vars = columns)
 
 
-    File /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/seaborn/axisgrid.py:2158, in pairplot(data, hue, hue_order, palette, vars, x_vars, y_vars, kind, diag_kind, markers, height, aspect, corner, dropna, plot_kws, diag_kws, grid_kws, size)
-       2156 if kind == "scatter":
-       2157     from .relational import scatterplot  # Avoid circular import
-    -> 2158     plotter(scatterplot, **plot_kws)
-       2159 elif kind == "reg":
-       2160     from .regression import regplot  # Avoid circular import
+    <seaborn.axisgrid.PairGrid at 0x14527a550>
 
-
-    File /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/seaborn/axisgrid.py:1428, in PairGrid.map_offdiag(self, func, **kwargs)
-       1426             if x_var != y_var:
-       1427                 indices.append((i, j))
-    -> 1428     self._map_bivariate(func, indices, **kwargs)
-       1429 return self
-
-
-    File /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/seaborn/axisgrid.py:1568, in PairGrid._map_bivariate(self, func, indices, **kwargs)
-       1566     if ax is None:  # i.e. we are in corner mode
-       1567         continue
-    -> 1568     self._plot_bivariate(x_var, y_var, ax, func, **kws)
-       1569 self._add_axis_labels()
-       1571 if "hue" in signature(func).parameters:
-
-
-    File /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/seaborn/axisgrid.py:1594, in PairGrid._plot_bivariate(self, x_var, y_var, ax, func, **kwargs)
-       1591 if self._hue_var is not None and self._hue_var not in axes_vars:
-       1592     axes_vars.append(self._hue_var)
-    -> 1594 data = self.data[axes_vars]
-       1595 if self._dropna:
-       1596     data = data.dropna()
-
-
-    File /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pandas/core/frame.py:3810, in DataFrame.__getitem__(self, key)
-       3808     if is_iterator(key):
-       3809         key = list(key)
-    -> 3810     indexer = self.columns._get_indexer_strict(key, "columns")[1]
-       3812 # take() does not accept boolean indexers
-       3813 if getattr(indexer, "dtype", None) == bool:
-
-
-    File /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pandas/core/indexes/base.py:6111, in Index._get_indexer_strict(self, key, axis_name)
-       6108 else:
-       6109     keyarr, indexer, new_indexer = self._reindex_non_unique(keyarr)
-    -> 6111 self._raise_if_missing(keyarr, indexer, axis_name)
-       6113 keyarr = self.take(indexer)
-       6114 if isinstance(key, Index):
-       6115     # GH 42790 - Preserve name from an Index
-
-
-    File /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pandas/core/indexes/base.py:6174, in Index._raise_if_missing(self, key, indexer, axis_name)
-       6171     raise KeyError(f"None of [{key}] are in the [{axis_name}]")
-       6173 not_found = list(ensure_index(key)[missing_mask.nonzero()[0]].unique())
-    -> 6174 raise KeyError(f"{not_found} not in index")
-
-
-    KeyError: "['jeugd_0_17_jarigen'] not in index"
 
 
 
     
-![png](dogs_eda_groningen_files/dogs_eda_groningen_5_1.png)
+![png](dogs_eda_groningen_files/dogs_eda_groningen_8_1.png)
     
 

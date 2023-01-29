@@ -4,7 +4,6 @@ title:  Dogs owners dataset construction
 
 ---
 
-
 On this page I will show you where I got data, how I collected, investigated and clean it.
 
 There is a website called [Gronometer](https://groningen.buurtmonitor.nl/) where you can find a lot of open data about Groningen. This data is also available to download as datasets. I choosed some data from 2018 year available for different neighbourhoods and downloaded it to `Groningen_population_data_2018.csv` file
@@ -1489,6 +1488,37 @@ data.head()
 
 ```python
 data['politie_report_aantal'] = data['aangiften_diefstal_af_uit_woning'] + data['aangiften_diefstal_auto'] + data['aangiften_diefstal_af_uit_bedrijf'] + data['aangiften_diefstal_fiets'] + data['aangiften_diefstal_af_uit_auto'] + data['aangiften_van_mishandeling'] + data['aangiften_van_vernieling']
+```
+
+I can see that there are a lot of columns with very long names. Let's make it shorter
+
+
+```python
+data = data.rename(columns={'bevolkingsdichtheid_inwoners_per_km2': 'inwoners_per_km2'})
+data = data.rename(columns={'percentage_personen_0_tot_15_jaar': 'perc_0_15_jaar'})
+data = data.rename(columns={'percentage_personen_15_tot_25_jaar': 'perc_15_25_jaar'})
+data = data.rename(columns={'percentage_personen_25_tot_45_jaar': 'perc_25_45_jaar'})
+data = data.rename(columns={'percentage_personen_45_tot_65_jaar': 'perc_45_65_jaar'})
+data = data.rename(columns={'percentage_personen_65_jaar_en_ouder': 'perc_65_en_ouder'})
+data = data.rename(columns={'percentage_ongehuwd': 'perc_ongehuwd'})
+data = data.rename(columns={'percentage_gehuwd': 'perc_gehuwd'})
+data = data.rename(columns={'percentage_gescheid': 'perc_gescheid'})
+data = data.rename(columns={'percentage_verweduwd': 'perc_verweduwd'})
+data = data.rename(columns={'percentage_eenpersoonshuishoudens': 'perc_eenpersoonshuishoudens'})
+data = data.rename(columns={'percentage_huishoudens_zonder_kinderen': 'perc_huishoudens_z_kind'})
+data = data.rename(columns={'percentage_huishoudens_met_kinderen': 'perc_huishoudens_met_kind'})
+data = data.rename(columns={'percentage_westerse_migratieachtergrond': 'perc_west_migratie'})
+data = data.rename(columns={'percentage_niet_westerse_migratieachtergrond': 'perc_niet_west_migratie'})
+data = data.rename(columns={'percentage_uit_nederlandse_antillen_en_aruba': 'perc_uit_antillen_en_aruba'})
+data = data.rename(columns={'percentage_overige_nietwestersemigratieachtergrond': 'perc_overige_nietwestersemigratie'})
+data = data.rename(columns={'aantal_mensen_met_een_uitkering_Participatiewet': 'aantal_mensen_met_pw'})
+data = data.rename(columns={'percentage_mensen_met_een_uitkering_krachtens_de_Participatiewet': 'perc_mensen_met_pw'})
+data = data.rename(columns={'gemiddeld_inkomen_per_persoon_met_inkomen': 'gemiddeld_inkomen_per_p_met_inkomen'})
+data = data.rename(columns={'aangiften_diefstal_af_uit_woning': 'diefstal_af_uit_woning'})
+data = data.rename(columns={'aangiften_diefstal_auto': 'diefstal_auto'})
+data = data.rename(columns={'aangiften_diefstal_fiets': 'diefstal_fiets'})
+data = data.rename(columns={'aangiften_diefstal_af_uit_bedrijf': 'diefstal_af_uit_bedrijf'})
+data = data.rename(columns={'aangiften_diefstal_af_uit_auto': 'diefstal_af_uit_auto'})
 ```
 
 
