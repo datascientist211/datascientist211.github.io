@@ -100,7 +100,7 @@ print(data_buurtkaart.shape)
 data_buurtkaart.head()
 ```
 
-    /var/folders/1q/nw56sv790t34hlk8f_j1dtxh0000gn/T/ipykernel_55016/3718181605.py:1: DtypeWarning: Columns (1,2,3,4,5,6,7,8,9,206,207) have mixed types. Specify dtype option on import or set low_memory=False.
+    /var/folders/1q/nw56sv790t34hlk8f_j1dtxh0000gn/T/ipykernel_55747/3718181605.py:1: DtypeWarning: Columns (1,2,3,4,5,6,7,8,9,206,207) have mixed types. Specify dtype option on import or set low_memory=False.
       data_buurtkaart = pd.read_csv('cbs_buurten_2018.csv', sep = ";")
 
 
