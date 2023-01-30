@@ -278,7 +278,7 @@ sns.pairplot(data = data,
 
 
 
-    <seaborn.axisgrid.PairGrid at 0x176974fd0>
+    <seaborn.axisgrid.PairGrid at 0x13fbb8f90>
 
 
 

@@ -88,23 +88,28 @@ data_dogs.head()
 
 
 
-Now I would like to read and explore the data from [Wijk- en buurtkaart 2018 dataset](https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/geografische-data/wijk-en-buurtkaart-2018). I saved the data about neighbourhoods to `.csv` file.
-Let's take a look at what data we have here:
+Now I would like to read and explore the data from [Wijk- en buurtkaart 2018 dataset](https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/geografische-data/wijk-en-buurtkaart-2018). I saved a data about neighbourhoods to `.csv` file. 
+
+First I needed to filter this data because only data about Groningen is needed:
+
+``` 
+data_groningen = new_data[new_data['gemeentenaam'] == "Groningen"]
+
+```
+and then I saved it back to `.csv` file
+
+Let's take a look at what we have here:
 
 
 ```python
-data_buurtkaart = pd.read_csv('cbs_buurten_2018.csv', sep = ";")
+data_buurtkaart = pd.read_csv('groningen_buurten_2018.csv')
 data_buurtkaart['buurtcode'] = data_buurtkaart['buurtcode'].astype(str).str.replace('BU0014', 'BU00')
 
 print(data_buurtkaart.shape)
 data_buurtkaart.head()
 ```
 
-    /var/folders/1q/nw56sv790t34hlk8f_j1dtxh0000gn/T/ipykernel_55747/3718181605.py:1: DtypeWarning: Columns (1,2,3,4,5,6,7,8,9,206,207) have mixed types. Specify dtype option on import or set low_memory=False.
-      data_buurtkaart = pd.read_csv('cbs_buurten_2018.csv', sep = ";")
-
-
-    (311405, 209)
+    (110, 209)
 
 
 
@@ -154,122 +159,122 @@ data_buurtkaart.head()
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
+      <td>151</td>
       <td>GP</td>
-      <td>BU09989999</td>
-      <td>Buitenland</td>
-      <td>WK099899</td>
-      <td>GM0998</td>
-      <td>Buitenland</td>
-      <td>-99999999</td>
-      <td>B</td>
-      <td></td>
+      <td>BU000000</td>
+      <td>Binnenstad-Noord</td>
+      <td>WK001400</td>
+      <td>GM0014</td>
+      <td>Groningen</td>
+      <td>1</td>
+      <td>NEE</td>
+      <td>9712</td>
       <td>...</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>2018BU09989999</td>
+      <td>0.6</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>5.9</td>
+      <td>17.0</td>
+      <td>2018BU00140000</td>
       <td>2018.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
+      <td>152</td>
       <td>GP</td>
-      <td>BU00109998</td>
-      <td></td>
-      <td>WK001099</td>
-      <td>GM0010</td>
-      <td>Delfzijl</td>
-      <td>-99999999</td>
-      <td>JA</td>
-      <td></td>
+      <td>BU000001</td>
+      <td>Binnenstad-Zuid</td>
+      <td>WK001400</td>
+      <td>GM0014</td>
+      <td>Groningen</td>
+      <td>1</td>
+      <td>NEE</td>
+      <td>9711</td>
       <td>...</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>2018BU00109998</td>
+      <td>0.4</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>0.4</td>
+      <td>5.0</td>
+      <td>5.6</td>
+      <td>17.0</td>
+      <td>2018BU00140001</td>
       <td>2018.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
+      <td>153</td>
       <td>GP</td>
-      <td>BU00349997</td>
-      <td></td>
-      <td>WK003499</td>
-      <td>GM0034</td>
-      <td>Almere</td>
-      <td>-99999999</td>
-      <td>JA</td>
-      <td></td>
+      <td>BU000002</td>
+      <td>Binnenstad-Oost</td>
+      <td>WK001400</td>
+      <td>GM0014</td>
+      <td>Groningen</td>
+      <td>1</td>
+      <td>NEE</td>
+      <td>9711</td>
       <td>...</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>2018BU00349997</td>
+      <td>0.4</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>5.3</td>
+      <td>17.0</td>
+      <td>2018BU00140002</td>
       <td>2018.0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>4</td>
+      <td>154</td>
       <td>GP</td>
-      <td>BU00509997</td>
-      <td></td>
-      <td>WK005099</td>
-      <td>GM0050</td>
-      <td>Zeewolde</td>
-      <td>-99999999</td>
-      <td>JA</td>
-      <td></td>
+      <td>BU000003</td>
+      <td>Binnenstad-West</td>
+      <td>WK001400</td>
+      <td>GM0014</td>
+      <td>Groningen</td>
+      <td>1</td>
+      <td>NEE</td>
+      <td>9718</td>
       <td>...</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>2018BU00509997</td>
+      <td>1.1</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>0.3</td>
+      <td>5.0</td>
+      <td>6.3</td>
+      <td>17.0</td>
+      <td>2018BU00140003</td>
       <td>2018.0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
+      <td>155</td>
       <td>GP</td>
-      <td>BU00569997</td>
-      <td></td>
-      <td>WK005699</td>
-      <td>GM0056</td>
-      <td>Zuidhorn</td>
-      <td>-99999999</td>
-      <td>JA</td>
-      <td></td>
+      <td>BU000004</td>
+      <td>Noorderplantsoen</td>
+      <td>WK001400</td>
+      <td>GM0014</td>
+      <td>Groningen</td>
+      <td>1</td>
+      <td>NEE</td>
+      <td>9717</td>
       <td>...</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>-99999999.0</td>
-      <td>2018BU00569997</td>
+      <td>1.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>0.5</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>17.0</td>
+      <td>2018BU00140004</td>
       <td>2018.0</td>
     </tr>
   </tbody>
@@ -277,17 +282,6 @@ data_buurtkaart.head()
 <p>5 rows × 209 columns</p>
 </div>
 
-
-
-First we need to filter this data because only data about Groningen is needed:
-
-
-```python
-data_buurtkaart = data_buurtkaart[data_buurtkaart['gemeentenaam'] == "Groningen"]
-print(data_buurtkaart.shape)
-```
-
-    (110, 209)
 
 
 We don't need some of the columns here:
