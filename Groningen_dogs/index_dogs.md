@@ -13,7 +13,7 @@ Here you can also see an analysis of who dogs owners in Groningen are, how they 
 - [Data constraction](./data_collecting.md)
 
 ---
-- [Who owns the dog in Groningen? (analysis)](./dogs_eda_groningen.md)
+- [Who owns a dog in Groningen? (analysis)](./dogs_eda_groningen.md)
 
 ---
 

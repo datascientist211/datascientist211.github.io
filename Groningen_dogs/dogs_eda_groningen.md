@@ -1,6 +1,6 @@
 ---
 
-title:  Who owns the dog in Groningen?
+title:  Who owns a dog in Groningen?
 
 ---
 
@@ -278,7 +278,7 @@ sns.pairplot(data = data,
 
 
 
-    <seaborn.axisgrid.PairGrid at 0x14f1c02d0>
+    <seaborn.axisgrid.PairGrid at 0x15c07b790>
 
 
 
@@ -304,4 +304,4 @@ for column in columns:
     dogs_amount: 1.0
 
 
-As an answer to the question: "Who owns the dog in Groningen?"  we can see from the charts above, most of the dog's owners in Groningen have a car or two wheelers motorcycle, receive some welfare benefits and probably live in the area where they would experience destruction from other people more than in other places. Also I can see that probably people, who moved to the Netherlands from Netherlands Antilles and Aruba love dogs and have it at home more often them other peoples.
+As an answer to the question: "Who owns a dog in Groningen?"  we can see from the charts above, most of the dog's owners in Groningen have a car or two wheelers motorcycle, receive some welfare benefits and probably live in the area where they would experience destruction from other people more than in other places. Also I can see that probably people, who moved to the Netherlands from Netherlands Antilles and Aruba love dogs and have it at home more often them other people.
