@@ -1,6 +1,23 @@
-### Portfolio
+---
+
+title: Daria Efimova
+description: Providing data-driven solutions to challenging business problems
 
 ---
+
+Talented data scientist with strong analytical skills. 
+
+I have experience in software development and a Masters degree in mathematics and computer science. Interested in solving difficult problems and finding optimal solutions using a data-driven approach. I like asking questions, going deep to the data and finding the answers.
+
+
+### Projects:
+
+---
+
+[Who live in Amsterdam?](./Amsterdam/amsterdamers_eda.md)
+
+---
+
 [Analysis of the owners of the dogs in Groningen](./Groningen_dogs/index_dogs.md)
 
 ---

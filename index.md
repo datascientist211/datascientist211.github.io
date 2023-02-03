@@ -13,6 +13,11 @@ I have experience in software development and a Masters degree in mathematics an
 ### Projects:
 
 ---
+
+[Who live in Amsterdam?](./Amsterdam/amsterdamers_eda.md)
+
+---
+
 [Analysis of the owners of the dogs in Groningen](./Groningen_dogs/index_dogs.md)
 
 ---
