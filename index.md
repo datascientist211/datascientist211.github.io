@@ -14,7 +14,7 @@ I have experience in software development and a Masters degree in mathematics an
 
 ---
 
-[Who live in Amsterdam?](./Amsterdam/amsterdamers_eda.md)
+[Who live in Amsterdam?](./Groningen_dogs/index_dogs.md)
 
 ---
 
