@@ -14,11 +14,11 @@ I have experience in software development and a Masters degree in mathematics an
 
 ---
 
-[Who live in dutch city? [Tableau link to be updated]]
+[Who live in dutch city? [Tableau link to be updated]]()
 
 ---
 
-[Amsterdam in charts/on heatmap? [link to web app to be updated]]
+[Amsterdam in charts/on heatmap? [link to web app to be updated]]()
 
 ---
 
