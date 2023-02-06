@@ -14,7 +14,11 @@ I have experience in software development and a Masters degree in mathematics an
 
 ---
 
-[Who live in Amsterdam?](./Amsterdam/amsterdamers_eda.md)
+[Who live in dutch city? [Tableau link to be updated]]
+
+---
+
+[Amsterdam in charts/on heatmap? [link to web app to be updated]]
 
 ---
 
