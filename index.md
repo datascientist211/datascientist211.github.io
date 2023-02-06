@@ -18,7 +18,7 @@ I have experience in software development and a Masters degree in mathematics an
 
 ---
 
-[Amsterdam in charts/on heatmap? [link to web app to be updated]]()
+[Amsterdam on charts and maps](https://mercury-amsterdam-dashboard.herokuapp.com/app/1)
 
 ---
 
