@@ -13,15 +13,12 @@ I have experience in software development and a Masters degree in mathematics an
 ### Projects:
 
 ---
-
 [Who live in dutch city? [Tableau link to be updated]]()
 
 ---
-
-[Amsterdam on charts and maps](https://mercury-amsterdam-dashboard.herokuapp.com/app/1)
+[Amsterdam on charts and maps [Python web app deployed in Heroku]](https://mercury-amsterdam-dashboard.herokuapp.com/app/1)
 
 ---
-
 [Analysis of the owners of the dogs in Groningen](./Groningen_dogs/index_dogs.md)
 
 ---
