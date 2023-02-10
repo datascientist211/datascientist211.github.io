@@ -34,6 +34,6 @@ I have experience in software development and a Masters degree in mathematics an
 
 ### My contacts:
 
-- E-mail: dbazinka@gmail.com 
+- E-mail: daria.in.netherlands@gmail.com 
 
 - Mobile: +31 6 252 985 43
