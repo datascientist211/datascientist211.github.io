@@ -16,7 +16,7 @@ I have experience in software development and a Masters degree in mathematics an
 [Who live in Amsterdam? [Tableau dashboard]](https://public.tableau.com/views/Amsterdammer_dashboard/Dashboard1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link)
 
 ---
-[Amsterdam on charts and maps [Python web app deployed in Heroku]](https://mercury-amsterdam-dashboard.herokuapp.com/app/1)
+[Amsterdam on charts and maps [Python web app deployed in Heroku]](https://mercury-amsterdam-dashboard.herokuapp.com/)
 
 ---
 [Analysis of the owners of the dogs in Groningen](./Groningen_dogs/index_dogs.md)
