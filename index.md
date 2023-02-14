@@ -13,6 +13,9 @@ I have experience in software development and a Masters degree in mathematics an
 ### Projects:
 
 ---
+[Insights about Amsterdam residents.](./Amsterdam/insights.md)
+
+---
 [Who live in Amsterdam? [Tableau dashboard]](https://public.tableau.com/views/Amsterdammer_dashboard/Dashboard1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link)
 
 ---
